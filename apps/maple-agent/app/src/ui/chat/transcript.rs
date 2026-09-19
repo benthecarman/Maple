@@ -435,8 +435,8 @@ fn render_message(item: &AgentTimelineItem, revision: u64, transcript: &Transcri
                     .flex()
                     .items_center()
                     .gap_1()
-                    .child(button)
                     .child(timestamp_label(item, &group))
+                    .child(button)
                     .when(transcript.speech_available, |row| {
                         let speech = transcript.speech.filter(|speech| speech.item_id == item.id);
                         row.child(speak_message_button(
